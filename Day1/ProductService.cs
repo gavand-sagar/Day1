@@ -20,7 +20,7 @@ namespace Day1
 
         public Product GetOne(int id)
         {
-            return products.Find(x => x.Id == id);
+            return products.Find(x=>x.Id == id);
         }
 
         public bool DeleteOne(int id)
@@ -31,7 +31,6 @@ namespace Day1
 
         public Product Create(Product product)
         {
-            product.Id = ++lastId;
             repository.Insert(product);
             return product;
         }

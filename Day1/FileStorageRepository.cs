@@ -6,6 +6,13 @@ namespace Day1
     public class FileStorageRepository<T> : IRepository<T>
     {
         string fileLocation = "C:\\Users\\Sagar\\Desktop\\data.txt";
+
+        public T Get(Predicate<T> predicate)
+        {
+            var allData = GetAll();
+            return allData.ToList().Find(predicate);
+        }
+
         public IEnumerable<T> GetAll()
         {
             string content = File.ReadAllText(fileLocation);
@@ -20,5 +27,7 @@ namespace Day1
             string content = JsonSerializer.Serialize(newData);
             File.WriteAllText(fileLocation,content);
         }
+
+
     }
 }

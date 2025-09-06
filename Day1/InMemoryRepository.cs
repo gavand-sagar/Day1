@@ -1,4 +1,5 @@
 ﻿
+
 namespace Day1
 {
     // storage in RAM / in List<T>
@@ -21,6 +22,9 @@ namespace Day1
             return _list.AsEnumerable();
         }
 
-      
+        public T Get(Predicate<T> predicate)
+        {
+            return _list.Find(predicate);
+        }
     }
 }

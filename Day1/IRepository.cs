@@ -4,6 +4,7 @@
     {
         IEnumerable<T> GetAll();
         void Insert(T entity);
+        T Get(Predicate<T> predicate);
 
     }
 }
