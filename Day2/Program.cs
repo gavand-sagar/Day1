@@ -1,3 +1,4 @@
+using Serilog;
 using Day2;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -7,6 +8,12 @@ using System.Text;
 using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.File(path: "log.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.MongoDB(databaseUrl: "mongodb+srv://")
+    .CreateLogger();
+
 builder.Services.AddResponseCaching();
 builder.Services.AddMemoryCache(options =>
 {

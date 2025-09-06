@@ -1,0 +1,3 @@
+2025-09-06 17:20:15.834 +05:30 [INF] WeatherForecast endpoint called
+2025-09-06 17:20:27.805 +05:30 [INF] WeatherForecast endpoint called
+2025-09-06 17:25:24.994 +05:30 [INF] WeatherForecast endpoint called
